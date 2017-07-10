@@ -1,4 +1,4 @@
-/* global */
+/* global $ */
 import '../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js';
 //import { JsonGetter } from './JsonGetter.js';
 
@@ -24,6 +24,47 @@ render(
   </Provider>,
   document.getElementById('root-todolist')
 )
+
+// ----------------------------
+
+import { normalize, schema } from 'normalizr';
+
+// Define a users schema
+const user = new schema.Entity('users');
+
+// Define your comments schema
+const comment = new schema.Entity('comments', {
+  commenter: user
+});
+
+// Define your article
+const article = new schema.Entity('articles', {
+  author: user,
+  comments: [ comment ]
+});
+
+const originalData = {
+  "id": "123",
+  "author": {
+    "id": "1",
+    "name": "Paul"
+  },
+  "title": "My awesome blog post",
+  "comments": [
+    {
+      "id": "324",
+      "commenter": {
+        "id": "2",
+        "name": "Nicole"
+      }
+    }
+  ]
+};
+
+$('#s7-1').text(JSON.stringify(originalData, null, "  "));
+$('#s7-3').text(JSON.stringify(normalize(originalData, article), null, "  "));
+//console.log(normalizedData);
+
 
 // ----------------------------
 

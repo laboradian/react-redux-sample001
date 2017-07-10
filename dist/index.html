@@ -22,8 +22,32 @@
     </ul>
   </div>
 
+
   <div class="panel panel-success">
-    <div class="panel-heading">サンプル1</div>
+    <div class="panel-heading">サンプル7：<a href="https://github.com/paularmstrong/normalizr">paularmstrong/normalizr</a> を使ってみる。</div>
+    <div class="panel-body">
+      <p>入力 → normalizr → 出力</p>
+      <pre style="display:inline-block;vertical-align:top;"><code id="s7-1"></code></pre>
+      <div style="display:inline-block;vertical-align:top;padding-top:20px;">→</div>
+      <pre style="display:inline-block;vertical-align:top;"><code id="s7-2">// normalizr を使う
+const user = new schema.Entity('users');
+
+const comment = new schema.Entity('comments', {
+  commenter: user
+});
+
+const article = new schema.Entity('articles', {
+  author: user,
+  comments: [ comment ]
+});
+      </code></pre>
+      <div style="display:inline-block;vertical-align:top;padding-top:20px;">→</div>
+      <pre style="display:inline-block;"><code id="s7-3"></code></pre>
+    </div>
+  </div>
+
+  <div class="panel panel-success">
+    <div class="panel-heading">サンプル6</div>
     <div class="panel-body">
       <p class="text-danger">このサンプルは、<a href="https://github.com/laboradian/react-redux-sample002">laboradian/react-redux-sample002</a> に移動しました。今後、こちらではメンテナンスしません。</p>
       <section>
@@ -38,15 +62,7 @@
   </div>
 
   <div class="panel panel-success">
-    <div class="panel-heading">サンプル2</div>
-    <div class="panel-body">
-      <a href="http://redux.js.org/docs/basics/ExampleTodoList.html">Example: Todo List · Redux</a> に載っていた例。
-      <div id="root-todolist"></div>
-    </div>
-  </div>
-
-  <div class="panel panel-success">
-    <div class="panel-heading">サンプル3</div>
+    <div class="panel-heading">サンプル5</div>
     <div class="panel-body">
       <a href="https://facebook.github.io/react/docs/components-and-props.html#composing-components">Components and Props - React</a> に載っていた例。
       <div id="root-name-list"></div>
@@ -54,18 +70,26 @@
   </div>
 
   <div class="panel panel-success">
-    <div class="panel-heading">サンプル4</div>
+    <div class="panel-heading">サンプル3</div>
     <div class="panel-body">
-      <a href="https://facebook.github.io/react/docs/rendering-elements.html">Rendering Elements - React</a> に載っていた例。
-      <div id="root-tick"></div>
+      <a href="http://redux.js.org/docs/basics/ExampleTodoList.html">Example: Todo List · Redux</a> に載っていた例。
+      <div id="root-todolist"></div>
     </div>
   </div>
 
   <div class="panel panel-success">
-    <div class="panel-heading">サンプル5</div>
+    <div class="panel-heading">サンプル2</div>
     <div class="panel-body">
-      サンプル4と同じ Reactコンポーネントをここでも使ってみる。
+      サンプル1と同じ Reactコンポーネントをここでも使ってみる。
       <div id="root-tick2"></div>
+    </div>
+  </div>
+
+  <div class="panel panel-success">
+    <div class="panel-heading">サンプル1</div>
+    <div class="panel-body">
+      <a href="https://facebook.github.io/react/docs/rendering-elements.html">Rendering Elements - React</a> に載っていた例。
+      <div id="root-tick"></div>
     </div>
   </div>
 
