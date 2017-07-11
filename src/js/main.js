@@ -23,7 +23,37 @@ render(
     <App />
   </Provider>,
   document.getElementById('root-todolist')
-)
+);
+
+// ----------------------------
+
+// JavaScriptコードを埋め込むことができる。
+
+(() => {
+  const formatName = function (user) {
+    return `${user.firstName} ${user.lastName}`;
+  };
+  const user = {
+    firstName: 'Harper',
+    lastName: 'Perez'
+  };
+  const element = (
+    <h3>
+      Hello, {formatName(user)}!
+    </h3>
+  );
+  render(
+    element,
+    document.getElementById('s10')
+  );
+})();
+
+// ----------------------------
+
+render(
+  <h3>Hello, world!</h3>,
+  document.getElementById('s9')
+);
 
 // ----------------------------
 
