@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --colors --require babel-register test/main.js || exit 0",
-    "watch": "webpack -d --colors --watch || exit 0",
-    "server": "browser-sync start --server dist --serverStatic dist --files dist/* || exit 0",
-    "build": "webpack -p --progress --colors || exit 0"
+    "test": "./node_modules/.bin/mocha --colors --require babel-register test/main.js",
+    "watch": "webpack -d --colors --watch",
+    "server": "browser-sync start --server dist --serverStatic dist --files dist/*",
+    "build": "webpack -p --progress --colors"
   },
   "repository": {
     "type": "git",
